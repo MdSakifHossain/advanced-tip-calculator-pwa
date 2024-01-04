@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+:root {
+	--theme-color: #f97;
+	
+	--inputBg: #1c1917;
+	--calcBg: #263238;
+	--c: #fff;
+	
+	--toast-disappears-in: 44s;
+}
+
+@font-face {
+	font-family: cbn; /*Give it any name u desire*/
+	src: url(/fonts/cbn.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: cbn, monospace;
+	color: var(--c);
+	transition: 0ms;
+	user-select: none;
+}
+
+body {
+	background: var(--theme-color);
+	height: 100svh;
+	min-height: 100svh;
+	width: 100svw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	outline: none;
+}
+
+span {
+	transition: 0s;
+}
+
+.svg-icon {
+	vertical-align: middle;
+	width: 23px;
+	height: 23px;
+}
+
+.app {
+	background: var(--calcBg);
+	width: 90%;
+	max-width: 400px;
+	padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+	border-radius: 20px;
+}
+
+/* 1st r 2nd div  */
+.food-container,
+.tip-container {
+	width: 100%;
+	margin: 1rem 0;
+}
+
+.title {
+	font-size: 1.05rem;
+}
+
+.food-input-container *,
+.tip-input-container * {
+	font-size: 1.3rem;
+}
+
+.food-input-container,
+.tip-input-container {
+	display: flex;
+	justify-content: center;
+	border: 1px solid transparent;
+	background: var(--inputBg);
+	padding: 0.5rem 1rem;
+	border-radius: 50rem;
+	margin-top: 0.3rem;
+}
+
+.food-amount-taker,
+.tip-amount-taker {
+	width: 100%;
+	outline: none;
+	background: none;
+	border: none;
+	transition: 0s;
+	padding-left: 0.3rem;
+}
+
+.peoples-div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0.5rem 0;
+}
+
+.peoples-div > button {
+	background: var(--theme-color);
+	border: none;
+}
+
+.plus-minus-buttons {
+	color: var(--calcBg);
+	padding: 0.7rem;
+	border-radius: 50rem;
+}
+
+.plus-minus-buttons img {
+	display: flex;
+	align-items: center;
+}
+
+.peoples {
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.paying-div {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 0;
+}
+
+.paying-div p {
+	padding: 1rem 0;
+	font-size: 1.1rem;
+}
+
+.final-p > span {
+	font-size: 2rem;
+}
+
+.reset-div {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.reset-div > button {
+	transition: 0s;
+	background: var(--theme-color);
+	border: 1px solid transparent;
+	border-radius: 50rem;
+	padding: 1rem;
+	font-size: 15px;
+
+	/*ai width ta iccha moto change kora jabe.
+    kintu right now korar dorkar nai*/
+	width: 45%;
+
+	text-align: center;
+}
+
+.reset-div .reset-button {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+
+#toastBox {
+    /* border: 1px solid var(--c); */
+    width: 95svw;
+    
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    
+    overflow: height;
+    padding: .1rem;
+    margin: 0 .5rem 0;
+    
+}
+
+.toast-item {
+    background: var(--calcBg);
+    width: 100%;
+    
+    padding: .75rem 0 1rem;
+    margin: .20rem 0;
+    
+    border-radius: 1rem 0rem 1rem 0;
+    
+    /* position relative is because of the toast::after */
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    transform: translateX(100%);
+    animation: moveLeft .1s linear forwards;
+}
+@keyframes moveLeft {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.toast-item::after {
+    content: "";
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    width: 100%;
+    height: .25rem;
+    background: var(--c);
+    font-weight: 100;
+    font-family: monospace;
+    
+    animation: anim var(--toast-disappears-in) linear forwards;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}

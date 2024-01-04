@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="manifest" href="/manifest.json" />
+	</head>
+	<body>
+		<div class="app">
+			<!-- 1st div -->
+			<!-- 🍕🍔🍟 Food ala section -->
+			<div class="food-container">
+				<div class="title">Food Bill</div>
+				<div class="food-input-container">
+					<span>$</span>
+					<input
+						type="number"
+						class="food-amount-taker faka"
+						placeholder="Food Amount"
+						id="foodInputTag"
+					/>
+				</div>
+			</div>
+
+			<!-- 2nd div -->
+			<!-- 💲 tip ala section -->
+			<div class="tip-container">
+				<div class="title">Tip</div>
+				<div class="tip-input-container">
+					<span>%</span>
+					<input
+						type="number"
+						class="tip-amount-taker faka"
+						placeholder="Tip percentage"
+						id="tipInputTag"
+					/>
+				</div>
+			</div>
+
+			<!-- 3rd div -->
+			<!-- 👪👫👬👭 -->
+			<!--people ala section -->
+			<div class="peoples-div">
+				<button class="plus-minus-buttons" id="increaseBtn">
+					<img
+						src="/icons/plus-icon.svg"
+						alt="plus-icon"
+						class="svg-icon"
+					/>
+				</button>
+
+				<span class="peoples" id="showPeopleCount">1</span>
+
+				<button class="plus-minus-buttons" id="decreaseBtn">
+					<img
+						src="/icons/minus-icon.svg"
+						alt="minus-icon"
+						class="svg-icon"
+					/>
+				</button>
+			</div>
+
+			<!-- 4th div -->
+			<!-- 😨 time to give money-->
+			<div class="paying-div">
+				<p class="everyones-paying">Per Head:</p>
+				<p class="final-p">$ <span id="totalAmount">0.00</span></p>
+			</div>
+
+			<!-- 5th div -->
+			<!-- 🐽🔥🔥🔥reseting area🔥🔥🔥 -->
+			<div class="reset-div">
+				<button class="reset-button" id="resetBtn">
+					<img
+						src="/icons/reset-icon.svg"
+						alt="reset-icon"
+						class="svg-icon"
+					/>
+					Reset
+				</button>
+			</div>
+		</div>
+		
+		<div id="toastBox">
+		    <!--
+		    <div class="toast-item">✅ Successfully Copied...!!!</div>
+		    <div class="toast-item">❌ Error ❌</div>
+		    -->
+		</div>
+		<script type="module" src="/src/js/main.js"></script>
+	</body>
+</html>
